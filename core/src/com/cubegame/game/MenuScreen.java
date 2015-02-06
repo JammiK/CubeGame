@@ -20,15 +20,18 @@ public class MenuScreen implements Screen {
         @Override
         public void clicked(InputEvent event, float x, float y) {
             BlocksGame.getInstance().showGame(); //Кликнули на кнопку - перешли в экран игры
+            System.out.println("Go12 UP");
         }
     }
 
     public MenuScreen() {
-        gameButton = new TextureActor(new Texture("badlogic.jpg")); // Создаем кнопку
-        gameButton.setPosition(200, 200); //Располагаем ее в нужном месте
-        gameButton.addListener(new GoToGameListener()); //Устанавливаем на нее обработчик
+        //gameButton = new TextureActor(new Texture("badlogic.jpg"), -1, -1, -1); // Создаем кнопку
+        //gameButton.setPosition(200, 200); //Располагаем ее в нужном месте
+//        gameButton.addListener(new GoToGameListener()); //Устанавливаем на нее обработчик
+    //    gameButton.addCaptureListener(new GoToGameListener());
         stage = new Stage(); //Делаем сцену
-        stage.addActor(gameButton); //добавляем на нее актера
+        BlocksGame.getInstance().showGame();
+//        stage.addActor(gameButton); //добавляем на нее актера
     }
 
     // Здесь идет отрисовка экрана
